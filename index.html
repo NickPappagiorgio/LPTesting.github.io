@@ -9,7 +9,7 @@
 		<p>
 			<fieldset id="passwordsFieldSet">
 				<legend>Passwords:</legend>
-				<form onsubmit="return login()" method="get" action="LastPassResult.html">
+				<form id="login-form" onsubmit="return login()" method="get" action="LastPassResult.html">
 					<table>
 						<tr>
 							<td><label for="crEmail">Email:</label></td>
@@ -21,7 +21,8 @@
 						</tr>
 					</table>
 					<br>
-					<button type="submit" value="Login">Login</button>
+          <button type="submit" value="Login">Login</button>
+          <button type="button" id="ajaxLogin">Ajax</button>
 				</form>
 			</fieldset>
 
@@ -736,6 +737,13 @@
 			if (window.location.search) {
 				window.location.href = window.location.pathname;
 			}
+      document.getElementById('ajaxLogin').addEventListener('click', function() {
+        var form = new FormData(document.getElementById('login-form'));
+        fetch("", {
+          method: "POST",
+          body: form
+        });
+      });
 		};
 		/*
 		function submitall(){
