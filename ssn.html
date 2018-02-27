@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<body onload="startup()">
+
+	<p>Enter the fields, then click "Submit" to submit the form:</p>
+
+	<div class="container">
+
+		<p>
+			<fieldset id="SSNFieldSet">
+				<legend>Social Security Numbers:</legend>
+				<table>
+					<tr>
+						<td><label for="ssnName">Name:</label></td>
+						<td><input type="text" id="ssnName" nameOnCard="ssnName" autocomplete="off" /></td>
+					</tr>
+					<tr>
+						<td><label for="ssnNumber">Number:</label></td>
+						<td><input type="text" id="ssnNumber" name="ssnNumber" autocomplete="off" /></td>
+					</tr>
+				</table>
+				<button name="submitissn" onClick="submit('SSNFieldSet')">Submit</button>
+			</fieldset>
+		</p>
+
+		<!-- <button name="submitall" onClick="submitall()">Submit All</button > -->
+
+		<button name="populateall" onClick="populateall()">Populate All</button>
+
+		<button name="clearall" onClick="clearall()">Clear All</button>
+
+	</div>
+
+	<script type="text/javascript">
+		function startup() {
+			if (window.location.search) {
+				window.location.href = window.location.pathname;
+			}
+      document.getElementById('ajaxLogin').addEventListener('click', function() {
+        var form = new FormData(document.getElementById('login-form'));
+        fetch("", {
+          method: "POST",
+          body: form
+        });
+      });
+		};
+		/*
+		function submitall(){
+			var formFields = document.getElementsByTagName('input');
+			var outSearchString = "?";
+			for (var i = 0; i < formFields.length; i++) {
+				if(formFields[i].value != '' && formFields[i].id != ''){
+					outSearchString = outSearchString + formFields[i].id + "=" + formFields[i].value + '&';
+				}
+			}
+			window.location = "LastPassResult.html" + outSearchString;
+			return false;
+		}
+		*/
+		function populateall() {
+			var formFields = document.getElementsByTagName('input');
+			for (var i = 0; i < formFields.length; i++) {
+				var type = formFields[i].type;
+				console.log(type);
+				if (type = "text") {
+					formFields[i].value = randomString(formFields[i].id);
+				}
+			}
+			return false;
+		}
+
+		function clearall() {
+			var formFields = document.getElementsByTagName('input');
+			for (var i = 0; i < formFields.length; i++) {
+				formFields[i].value = '';
+			}
+			return false;
+		}
+
+		function submit(fieldSet) {
+			var fieldSets = document.getElementsByTagName('fieldset');
+			var fieldSet;
+			for (var i = 0; i < fieldSets.length; i++) {
+				if (fieldSets[i].id == fieldSet) {
+					fieldSet = fieldSets[i];
+					break;
+				}
+			}
+			if (fieldSet) {
+				var formFields = fieldSet.getElementsByTagName('input');
+				var outSearchString = "?";
+				for (var i = 0; i < formFields.length; i++) {
+					if (formFields[i].value != '' && formFields[i].id != '') {
+						outSearchString = outSearchString + formFields[i].id + "=" + formFields[i].value + '&';
+					}
+				}
+				window.location = "LastPassResult.html" + outSearchString;
+			}
+			return false;
+		}
+
+		function randomString(id) {
+			var length = 16;
+			var result = id + '-';
+			var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+			for (var i = length; i > 0; --i) {
+				result += chars[Math.floor(Math.random() * chars.length)];
+			}
+			return result;
+		}
+	</script>
+
+	<style>
+		fieldset {
+			width: 350px;
+		}
+
+		table {
+			width: 350px;
+			align-content: left;
+		}
+
+		input {
+			line-height: 2;
+		}
+
+		.container {
+			width: 500px;
+			clear: both;
+		}
+
+		.container input {
+			width: 100%;
+			clear: both;
+		}
+
+		.no-spin::-webkit-inner-spin-button,
+		.no-spin::-webkit-outer-spin-button {
+			-webkit-appearance: none !important;
+			margin: 0 !important;
+			-moz-appearance: textfield !important;
+		}
+	</style>
+
+</body>
+
+</html>

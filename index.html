@@ -2,6 +2,26 @@
 <html>
 
 <body onload="startup()">
+	<ul class="menubar">
+		<li><a id="m_address" href="/address.html">Address</a></li>
+		<li><a id="m_bankaccount" href="/bankaccount.html">Bank account</a></li>
+		<li><a id="m_database" href="/database.html">Database</a></li>
+		<li><a id="m_driverslicense" href="/driverslicense.html">Driver's license</a></li>
+		<li><a id="m_emailaccount" href="/emailaccount.html">Email account</a></li>
+		<li><a id="m_healthinsurance" href="/healthinsurance.html">Health insurance</a></li>
+		<li><a id="m_IM" href="/im.html">Instant messenger</a></li>
+		<li><a id="m_insurance" href="/insurance.html">Insurance</a></li>
+		<li><a id="m_membership" href="/membership.html">Membership</a></li>
+		<li><a id="m_passport" href="/passport.html">Passport</a></li>
+		<li><a id="m_password" href="/password.html">Password</a></li>
+		<li><a id="m_paymentcard" href="/paymentcard.html">Payment card</a></li>
+		<li><a id="m_server" href="/server.html">Server</a></li>
+		<li><a id="m_softwarelicense" href="/softwarelicense.html">Software license</a></li>
+		<li><a id="m_sshkey" href="/sshkey.html">SSH key</a></li>
+		<li><a id="m_ssn" href="/ssn.html">SSN</a></li>
+		<li><a id="m_textbox" href="/textbox.html">Text box</a></li>
+		<li><a id="m_wifipassword" href="/wifipassword.html">Wi-Fi password</a></li>
+	</ul>
 
 	<p>Enter the fields, then click "Submit" to submit the form:</p>
 
@@ -812,6 +832,31 @@
 	</script>
 
 	<style>
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: #333333;
+			width: 1000px;
+		}
+
+		li {
+			float: left;
+		}
+
+		li a {
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 16px;
+			text-decoration: none;
+		}
+
+		li a:hover {
+			background-color: #111111;
+		}
+		
 		fieldset {
 			width: 350px;
 		}

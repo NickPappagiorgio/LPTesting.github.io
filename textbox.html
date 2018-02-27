@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<body>      
+    <p>Text box</p>
+
+    <div class="container">
+
+        <textarea id="box" name="box" cols="80" rows="20"></textarea>
+
+        <button name="copy" onClick="copy()">Copy</button>
+
+    </div>
+
+    <script type="text/javascript">
+
+        function copy() {
+            var box = document.getElementById("box");
+            box.select();
+            document.execCommand("Copy");
+        }
+    </script>
+
+    <style>
+        .container {
+            width: 500px;
+            clear: both;
+        }
+    </style>
+</body>
+
+</html>

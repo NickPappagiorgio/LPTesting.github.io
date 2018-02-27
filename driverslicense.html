@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<body onload="startup()">
+
+	<p>Enter the fields, then click "Submit" to submit the form:</p>
+
+	<div class="container">
+
+		<p>
+			<fieldset id="DriversLiscensesFieldSet">
+				<legend>Driver's Liscenses:</legend>
+				<table>
+					<tr>
+						<td><label for="liscenseNumber">Number:</label></td>
+						<td><input type="text" id="liscenseNumber" nameOnCard="liscenseNumber" autocomplete="off" /></td>
+					</tr>
+					<tr>
+						<td><label for="liscenseExpirationDate">Expiration date:</label></td>
+						<td><input type="text" id="liscenseExpirationDate" name="liscenseExpirationDate" autocomplete="off" /></td>
+					</tr>
+					<tr>
+						<td><label for="liscenseClass">Class:</label></td>
+						<td><input type="text" id="liscenseClass" name="liscenseClass" autocomplete="off" /></td>
+					</tr>
+					<tr>
+						<td><label for="liscenceName">Name:</label></td>
+						<td><input type="text" id="liscenceName" name="liscenceName" autocomplete="off" /></td>
+					</tr>
+					<tr>
+						<td><label for="liscenceAddress">Address:</label></td>
+						<td><input type="text" id="liscenceAddress" name="liscenceAddress" autocomplete="off" /></td>
+					</tr>
+					<tr>
+						<td><label for="liscenceCitySlashTown">City / Town:</label></td>
+						<td><input type="text" id="liscenceCitySlashTown" name="liscenceCitySlashTown" autocomplete="off" /></td>
+					</tr>
+					<tr>
+						<td><label for="liscenseState">State:</label></td>
+						<td><input type="text" id="liscenseState" name="liscenseState" autocomplete="off" /></td>
+					</tr>
+					<tr>
+						<td><label for="liscenceZipSlashPostalCode">ZIP / Postal Code:</label></td>
+						<td><input type="text" id="liscenceZipSlashPostalCode" name="liscenceZipSlashPostalCode" autocomplete="off" /></td>
+					</tr>
+					<tr>
+						<td><label for="liscenseCountry">Country:</label></td>
+						<td><input type="text" id="liscenseCountry" name="liscenseCountry" autocomplete="off" /></td>
+					</tr>
+					<tr>
+						<td><label for="liscenseDateOfBirth">Date of Birth:</label></td>
+						<td><input type="text" id="liscenseDateOfBirth" name="liscenseDateOfBirth" autocomplete="off" /></td>
+					</tr>
+					<tr>
+						<td><label for="liscenseSex">Sex:</label></td>
+						<td><input type="text" id="liscenseSex" name="liscenseSex" autocomplete="off" /></td>
+					</tr>
+					<tr>
+						<td><label for="liscenseHeight">Height:</label></td>
+						<td><input type="text" id="liscenseHeight" name="liscenseHeight" autocomplete="off" /></td>
+					</tr>
+				</table>
+				<button name="submitidriversliscense" onClick="submit('PassportDriversLiscensesFieldSetsFieldSet')">Submit</button>
+			</fieldset>
+		</p>
+
+		<!-- <button name="submitall" onClick="submitall()">Submit All</button > -->
+
+		<button name="populateall" onClick="populateall()">Populate All</button>
+
+		<button name="clearall" onClick="clearall()">Clear All</button>
+
+	</div>
+
+	<script type="text/javascript">
+		function startup() {
+			if (window.location.search) {
+				window.location.href = window.location.pathname;
+			}
+      document.getElementById('ajaxLogin').addEventListener('click', function() {
+        var form = new FormData(document.getElementById('login-form'));
+        fetch("", {
+          method: "POST",
+          body: form
+        });
+      });
+		};
+		/*
+		function submitall(){
+			var formFields = document.getElementsByTagName('input');
+			var outSearchString = "?";
+			for (var i = 0; i < formFields.length; i++) {
+				if(formFields[i].value != '' && formFields[i].id != ''){
+					outSearchString = outSearchString + formFields[i].id + "=" + formFields[i].value + '&';
+				}
+			}
+			window.location = "LastPassResult.html" + outSearchString;
+			return false;
+		}
+		*/
+		function populateall() {
+			var formFields = document.getElementsByTagName('input');
+			for (var i = 0; i < formFields.length; i++) {
+				var type = formFields[i].type;
+				console.log(type);
+				if (type = "text") {
+					formFields[i].value = randomString(formFields[i].id);
+				}
+			}
+			return false;
+		}
+
+		function clearall() {
+			var formFields = document.getElementsByTagName('input');
+			for (var i = 0; i < formFields.length; i++) {
+				formFields[i].value = '';
+			}
+			return false;
+		}
+
+		function submit(fieldSet) {
+			var fieldSets = document.getElementsByTagName('fieldset');
+			var fieldSet;
+			for (var i = 0; i < fieldSets.length; i++) {
+				if (fieldSets[i].id == fieldSet) {
+					fieldSet = fieldSets[i];
+					break;
+				}
+			}
+			if (fieldSet) {
+				var formFields = fieldSet.getElementsByTagName('input');
+				var outSearchString = "?";
+				for (var i = 0; i < formFields.length; i++) {
+					if (formFields[i].value != '' && formFields[i].id != '') {
+						outSearchString = outSearchString + formFields[i].id + "=" + formFields[i].value + '&';
+					}
+				}
+				window.location = "LastPassResult.html" + outSearchString;
+			}
+			return false;
+		}
+
+		function randomString(id) {
+			var length = 16;
+			var result = id + '-';
+			var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+			for (var i = length; i > 0; --i) {
+				result += chars[Math.floor(Math.random() * chars.length)];
+			}
+			return result;
+		}
+	</script>
+
+	<style>
+		fieldset {
+			width: 350px;
+		}
+
+		table {
+			width: 350px;
+			align-content: left;
+		}
+
+		input {
+			line-height: 2;
+		}
+
+		.container {
+			width: 500px;
+			clear: both;
+		}
+
+		.container input {
+			width: 100%;
+			clear: both;
+		}
+
+		.no-spin::-webkit-inner-spin-button,
+		.no-spin::-webkit-outer-spin-button {
+			-webkit-appearance: none !important;
+			margin: 0 !important;
+			-moz-appearance: textfield !important;
+		}
+	</style>
+
+</body>
+
+</html>
