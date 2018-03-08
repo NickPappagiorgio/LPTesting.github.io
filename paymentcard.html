@@ -6,43 +6,42 @@
 	<p>Enter the fields, then click "Submit" to submit the form:</p>
 
 	<div class="container">
-
-
 		<p>
-			<fieldset id="PaymentCardsFieldSet">
-				<legend>Payment Cards:</legend>
-				<table>
-					<tr>
-						<td><label for="payNameOnCard">Name on Card:</label></td>
-						<td><input type="text" id="payNameOnCard" nameOnCard="payNameOnCard" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="payType">Type:</label></td>
-						<td><input type="text" id="payType" name="payType" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="payNumber">Number:</label></td>
-						<td><input type="text" id="payNumber" name="payNumber" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="paySecurityCode">Security Code:</label></td>
-						<td><input type="text" id="paySecurityCode" name="paySecurityCode" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="payStartDate2">Start Date:</label></td>
-						<td><input type="date" id="payStartDate" class="no-spin" name="payStartDate" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="payExpirationDate2">Expiration Date:</label></td>
-						<td><input type="date" class="no-spin" id="payExpirationDate" name="payExpirationDate" autocomplete="off" /></td>
-					</tr>
-				</table>
-				<button name="submitpaymentcards" onClick="submit('PaymentCardsFieldSet')">Submit</button>
-			</fieldset>
+			<form id="payment-form" method="get" action="LastPassResult.html">
+				<fieldset id="paymentFieldSet">
+					<legend>Payment Cards:</legend>
+					<table>
+						<tr>
+							<td><label>Name on Card</label></td>
+							<td><input name="NameOnCard" autocomplete="off" type="text"></td>
+						</tr>
+						<tr>
+							<td><label>Card Number</label></td>
+							<td><input name="CardNumber" autocomplete="off" class="form-control card-number" size="20" type="text" ></td>
+						</tr>
+						<tr>
+							<td><label>CVC</label></td>
+							<td><input name="CVC" autocomplete="off" class="form-control card-cvc" size="4" type="text"></td>
+						</tr>
+						<tr>
+							<td>Expiration</td>
+							<td><input name="ExpMonth" autocomplete="off" class="form-control card-expiry-month" placeholder="MM" size="2" type="text"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><input name="ExpYear" autocomplete="off" class="form-control card-expiry-year" placeholder="YYYY" size="4" type="text"></td>
+						</tr>
+					</table>
+					<br>
+					<div class="form-row">
+						<div class="col-md-12 form-group">
+							<button type="submit">Submit</button>
+						</div>
+					</div>
+				</fieldset>
+
+			</form>
 		</p>
-
-
-		<!-- <button name="submitall" onClick="submitall()">Submit All</button > -->
 
 		<button name="populateall" onClick="populateall()">Populate All</button>
 
@@ -55,27 +54,8 @@
 			if (window.location.search) {
 				window.location.href = window.location.pathname;
 			}
-      document.getElementById('ajaxLogin').addEventListener('click', function() {
-        var form = new FormData(document.getElementById('login-form'));
-        fetch("", {
-          method: "POST",
-          body: form
-        });
-      });
 		};
-		/*
-		function submitall(){
-			var formFields = document.getElementsByTagName('input');
-			var outSearchString = "?";
-			for (var i = 0; i < formFields.length; i++) {
-				if(formFields[i].value != '' && formFields[i].id != ''){
-					outSearchString = outSearchString + formFields[i].id + "=" + formFields[i].value + '&';
-				}
-			}
-			window.location = "LastPassResult.html" + outSearchString;
-			return false;
-		}
-		*/
+
 		function populateall() {
 			var formFields = document.getElementsByTagName('input');
 			for (var i = 0; i < formFields.length; i++) {
@@ -97,6 +77,7 @@
 		}
 
 		function submit(fieldSet) {
+			alert('monkey');
 			var fieldSets = document.getElementsByTagName('fieldset');
 			var fieldSet;
 			for (var i = 0; i < fieldSets.length; i++) {
