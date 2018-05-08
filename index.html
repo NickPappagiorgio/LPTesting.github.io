@@ -2,893 +2,916 @@
 <html>
 
 <body onload="startup()">
-	<ul class="menubar">
-		<li><a id="m_address" href="/address.html">Address</a></li>
-		<li><a id="m_bankaccount" href="/bankaccount.html">Bank account</a></li>
-		<li><a id="m_database" href="/database.html">Database</a></li>
-		<li><a id="m_driverslicense" href="/driverslicense.html">Driver's license</a></li>
-		<li><a id="m_emailaccount" href="/emailaccount.html">Email account</a></li>
-		<li><a id="m_healthinsurance" href="/healthinsurance.html">Health insurance</a></li>
-		<li><a id="m_IM" href="/im.html">Instant messenger</a></li>
-		<li><a id="m_insurance" href="/insurance.html">Insurance</a></li>
-		<li><a id="m_membership" href="/membership.html">Membership</a></li>
-		<li><a id="m_passport" href="/passport.html">Passport</a></li>
-		<li><a id="m_password" href="/password.html">Password</a></li>
-		<li><a id="m_registration" href="/registration.html">Registration</a></li>
-		<li><a id="m_paymentcard" href="/paymentcard.html">Payment card</a></li>
-		<li><a id="m_paymentcard2" href="/paymentcard2.html">Payment card 2</a></li>
-		<li><a id="m_server" href="/server.html">Server</a></li>
-		<li><a id="m_softwarelicense" href="/softwarelicense.html">Software license</a></li>
-		<li><a id="m_sshkey" href="/sshkey.html">SSH key</a></li>
-		<li><a id="m_ssn" href="/ssn.html">SSN</a></li>
-		<li><a id="m_textbox" href="/textbox.html">Text box</a></li>
-		<li><a id="m_wifipassword" href="/wifipassword.html">Wi-Fi password</a></li>
-	</ul>
+    <ul class="menubar">
+        <li><a id="m_address" href="/address.html">Address</a></li>
+        <li><a id="m_bankaccount" href="/bankaccount.html">Bank account</a></li>
+        <li><a id="m_database" href="/database.html">Database</a></li>
+        <li><a id="m_driverslicense" href="/driverslicense.html">Driver's license</a></li>
+        <li><a id="m_emailaccount" href="/emailaccount.html">Email account</a></li>
+        <li><a id="m_healthinsurance" href="/healthinsurance.html">Health insurance</a></li>
+        <li><a id="m_IM" href="/im.html">Instant messenger</a></li>
+        <li><a id="m_insurance" href="/insurance.html">Insurance</a></li>
+        <li><a id="m_membership" href="/membership.html">Membership</a></li>
+        <li><a id="m_passport" href="/passport.html">Passport</a></li>
+        <li><a id="m_password" href="/password.html">Password</a></li>
+        <li><a id="m_registration" href="/registration.html">Registration</a></li>
+        <li><a id="m_paymentcard" href="/paymentcard.html">Payment card</a></li>
+        <li><a id="m_paymentcard2" href="/paymentcard2.html">Payment card 2</a></li>
+        <li><a id="m_server" href="/server.html">Server</a></li>
+        <li><a id="m_softwarelicense" href="/softwarelicense.html">Software license</a></li>
+        <li><a id="m_sshkey" href="/sshkey.html">SSH key</a></li>
+        <li><a id="m_ssn" href="/ssn.html">SSN</a></li>
+        <li><a id="m_textbox" href="/textbox.html">Text box</a></li>
+        <li><a id="m_wifipassword" href="/wifipassword.html">Wi-Fi password</a></li>
+    </ul>
 
-	<p>Enter the fields, then click "Submit" to submit the form:</p>
+    <p>Enter the fields, then click "Submit" to submit the form:</p>
 
-	<div class="container">
-		<p>
-			<fieldset id="passwordsFieldSet">
-				<legend>Passwords:</legend>
-				<form id="login-form" onsubmit="return login()" method="get" action="LastPassResult.html">
-					<table>
-						<tr>
-							<td><label for="crEmail">Email:</label></td>
-							<td><input type="email" id="crEmail" name="crEmail" placeholder="Enter Email" required/></td>
-						</tr>
-						<tr>
-							<td><label for="crPassword">Password:</label></td>
-							<td><input type="password" id="crPassword" name="crPassword" placeholder="Enter Password" required/></td>
-						</tr>
-					</table>
-					<br>
-          <button type="submit" value="Login">Login</button>
-          <button type="button" id="ajaxLogin">Ajax</button>
-				</form>
-			</fieldset>
+    <div class="container">
+        <p>
+            <fieldset id="passwordsFieldSet">
+                <legend>Passwords:</legend>
+                <form id="login-form" onsubmit="return login()" method="get" action="LastPassResult.html">
+                    <table>
+                        <tr>
+                            <td><label for="crEmail">Email:</label></td>
+                            <td><input type="email" id="crEmail" name="crEmail" placeholder="Enter Email" required/></td>
+                        </tr>
+                        <tr>
+                            <td><label for="crPassword">Password:</label></td>
+                            <td><input type="password" id="crPassword" name="crPassword" placeholder="Enter Password" required/></td>
+                        </tr>
+                    </table>
+                    <br>
+                    <button type="submit" value="Login">Login</button>
+                    <button type="button" id="ajaxLogin">Ajax</button>
+                </form>
+            </fieldset>
 
-		</p>
+        </p>
 
-		<p>
-			<fieldset id="AdressesFieldSet">
-				<legend>Addresses:</legend>
-				<table>
-					<tr>
-						<td><label for="addrTitle">Title:</label></td>
-						<td><input type="text" id="addrTitle" name="addrTitle" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="addrFirstName">First Name:</label></td>
-						<td><input type="text" id="addrFirstName" name="addrFirstName" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="addrMiddleName">Middle Name:</label></td>
-						<td><input type="text" id="addrMiddleName" name="addrMiddleName" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="addrLastName">Last Name:</label></td>
-						<td><input type="text" id="addrLastName" name="addrLastName" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="addrUserName">Username:</label></td>
-						<td><input type="text" id="addrUserName" name="addrUserName" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="addrGender">Gender:</label></td>
-						<td><input type="text" id="addrGender" name="addrGender" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="addrCompany">Company:</label></td>
-						<td><input type="text" id="addrCompany" name="addrCompany" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="addrSddress1">Address 1:</label></td>
-						<td><input type="text" id="addrSddress1" name="addrSddress1" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="addrAddress2">Address 2:</label></td>
-						<td><input type="text" id="addrAddress2" name="addrAddress2" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="addrAddress3">Address 3:</label></td>
-						<td><input type="text" id="addrAddress3" name="addrAddress3" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="addrCitySlashTown">City / Town:</label></td>
-						<td><input type="text" id="addrCitySlashTown" name="addrCitySlashTown" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="addrtcounty">County:</label></td>
-						<td><input type="text" id="addrtcounty" name="addrtcounty" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="addrState">State:</label></td>
-						<td><input type="text" id="addrState" name="addrState" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="addrZipSlashPostalCode">ZIP / Postal Code:</label></td>
-						<td><input type="text" id="addrZipSlashPostalCode" name="addrZipSlashPostalCode" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="addrCountry">Country:</label></td>
-						<td><input type="text" id="addrCountry" name="addrCountry" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="addrTimezone">Timezone:</label></td>
-						<td><input type="text" id="addrTimezone" name="addrTimezone" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="addrEmailAddress">Email Address:</label></td>
-						<td><input type="text" id="addrEmailAddress" name="addrEmailAddress" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="addrPhoneNumber">Phone:</label></td>
-						<td><input type="text" id="addrPhoneNumber" name="addrPhoneNumber" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="addrEveningPhone">Evening Phone:</label></td>
-						<td><input type="text" id="addrEveningPhone" name="addrEveningPhone" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="addrMobilePhone">Mobile Phone:</label></td>
-						<td><input type="text" id="addrMobilePhone" name="addrMobilePhone" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="addrFax">Fax:</label></td>
-						<td><input type="text" id="addrFax" name="addrFax" autocomplete="off" /></td>
-					</tr>
-				</table>
-				<button name="submitaddresses" onClick="submit('AdressesFieldSet')">Submit</button>
-			</fieldset>
-		</p>
+        <p>
+            <fieldset id="AdressesFieldSet">
+                <legend>Addresses:</legend>
+                <table>
+                    <tr>
+                        <td><label for="addrTitle">Title:</label></td>
+                        <td><input type="text" id="addrTitle" name="addrTitle" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="addrFirstName">First Name:</label></td>
+                        <td><input type="text" id="addrFirstName" name="addrFirstName" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="addrMiddleName">Middle Name:</label></td>
+                        <td><input type="text" id="addrMiddleName" name="addrMiddleName" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="addrLastName">Last Name:</label></td>
+                        <td><input type="text" id="addrLastName" name="addrLastName" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="addrUserName">Username:</label></td>
+                        <td><input type="text" id="addrUserName" name="addrUserName" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="addrGender">Gender:</label></td>
+                        <td><input type="text" id="addrGender" name="addrGender" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="addrCompany">Company:</label></td>
+                        <td><input type="text" id="addrCompany" name="addrCompany" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="addrSddress1">Address 1:</label></td>
+                        <td><input type="text" id="addrSddress1" name="addrSddress1" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="addrAddress2">Address 2:</label></td>
+                        <td><input type="text" id="addrAddress2" name="addrAddress2" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="addrAddress3">Address 3:</label></td>
+                        <td><input type="text" id="addrAddress3" name="addrAddress3" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="addrCitySlashTown">City / Town:</label></td>
+                        <td><input type="text" id="addrCitySlashTown" name="addrCitySlashTown" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="addrtcounty">County:</label></td>
+                        <td><input type="text" id="addrtcounty" name="addrtcounty" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="addrState">State:</label></td>
+                        <td><input type="text" id="addrState" name="addrState" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="addrZipSlashPostalCode">ZIP / Postal Code:</label></td>
+                        <td><input type="text" id="addrZipSlashPostalCode" name="addrZipSlashPostalCode" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="addrCountry">Country:</label></td>
+                        <td><input type="text" id="addrCountry" name="addrCountry" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="addrTimezone">Timezone:</label></td>
+                        <td><input type="text" id="addrTimezone" name="addrTimezone" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="addrEmailAddress">Email Address:</label></td>
+                        <td><input type="text" id="addrEmailAddress" name="addrEmailAddress" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="addrPhoneNumber">Phone:</label></td>
+                        <td><input type="text" id="addrPhoneNumber" name="addrPhoneNumber" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="addrEveningPhone">Evening Phone:</label></td>
+                        <td><input type="text" id="addrEveningPhone" name="addrEveningPhone" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="addrMobilePhone">Mobile Phone:</label></td>
+                        <td><input type="text" id="addrMobilePhone" name="addrMobilePhone" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="addrFax">Fax:</label></td>
+                        <td><input type="text" id="addrFax" name="addrFax" autocomplete="off" /></td>
+                    </tr>
+                </table>
+                <button name="submitaddresses" onClick="submit('AdressesFieldSet')">Submit</button>
+            </fieldset>
+        </p>
 
-		<p>
-			<fieldset id="PaymentCardsFieldSet">
-				<legend>Payment Cards:</legend>
-				<table>
-					<tr>
-						<td><label for="payNameOnCard">Name on Card:</label></td>
-						<td><input type="text" id="payNameOnCard" nameOnCard="payNameOnCard" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="payType">Type:</label></td>
-						<td><input type="text" id="payType" name="payType" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="payNumber">Number:</label></td>
-						<td><input type="text" id="payNumber" name="payNumber" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="paySecurityCode">Security Code:</label></td>
-						<td><input type="text" id="paySecurityCode" name="paySecurityCode" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="payStartDate2">Start Date:</label></td>
-						<td><input type="date" id="payStartDate" class="no-spin" name="payStartDate" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="payExpirationDate2">Expiration Date:</label></td>
-						<td><input type="date" class="no-spin" id="payExpirationDate" name="payExpirationDate" autocomplete="off" /></td>
-					</tr>
-				</table>
-				<button name="submitpaymentcards" onClick="submit('PaymentCardsFieldSet')">Submit</button>
-			</fieldset>
-		</p>
+        <p>
+            <fieldset id="PaymentCardsFieldSet">
+                <legend>Payment Cards:</legend>
+                <table>
+                    <tr>
+                        <td><label for="payNameOnCard">Name on Card:</label></td>
+                        <td><input type="text" id="payNameOnCard" nameOnCard="payNameOnCard" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="payType">Type:</label></td>
+                        <td><input type="text" id="payType" name="payType" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="payNumber">Number:</label></td>
+                        <td><input type="text" id="payNumber" name="payNumber" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="paySecurityCode">Security Code:</label></td>
+                        <td><input type="text" id="paySecurityCode" name="paySecurityCode" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="payStartDate2">Start Date:</label></td>
+                        <td><input type="date" id="payStartDate" class="no-spin" name="payStartDate" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="payExpirationDate2">Expiration Date:</label></td>
+                        <td><input type="date" class="no-spin" id="payExpirationDate" name="payExpirationDate" autocomplete="off" /></td>
+                    </tr>
+                </table>
+                <button name="submitpaymentcards" onClick="submit('PaymentCardsFieldSet')">Submit</button>
+            </fieldset>
+        </p>
 
-		<p>
-			<fieldset id="BankAccountsFieldSet">
-				<legend>Bank Accounts:</legend>
-				<table>
-					<tr>
-						<td><label for="bankName">Bank Name:</label></td>
-						<td><input type="text" id="bankName" nameOnCard="bankName" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="bankAccountType">Account Type:</label></td>
-						<td><input type="text" id="bankAccountType" name="bankAccountType" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="bankRoutingNumber">Routing Number:</label></td>
-						<td><input type="text" id="bankRoutingNumber" name="bankRoutingNumber" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="bankAccountNumber">Account Number:</label></td>
-						<td><input type="text" id="bankAccountNumber" name="bankAccountNumber" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="bankSwiftCode">Swift Code:</label></td>
-						<td><input type="text" id="bankSwiftCode" name="bankSwiftCode" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="bankIbanNumber">IBAN Number:</label></td>
-						<td><input type="text" id="bankIbanNumber" name="bankIbanNumber" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="bankPin">Pin:</label></td>
-						<td><input type="text" id="bankPin" name="bankPin" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="bankBranchAddress">Branch Address:</label></td>
-						<td><input type="text" id="bankBranchAddress" name="bankBranchAddress" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="bankBranchPhone">Branch Phone:</label></td>
-						<td><input type="text" id="bankBranchPhone" name="bankBranchPhone" autocomplete="off" /></td>
-					</tr>
-				</table>
-				<button name="submitbankaccounts" onClick="submit('BankAccountsFieldSet')">Submit</button>
-			</fieldset>
-		</p>
+        <p>
+            <fieldset id="BankAccountsFieldSet">
+                <legend>Bank Accounts:</legend>
+                <table>
+                    <tr>
+                        <td><label for="bankName">Bank Name:</label></td>
+                        <td><input type="text" id="bankName" nameOnCard="bankName" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="bankAccountType">Account Type:</label></td>
+                        <td><input type="text" id="bankAccountType" name="bankAccountType" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="bankRoutingNumber">Routing Number:</label></td>
+                        <td><input type="text" id="bankRoutingNumber" name="bankRoutingNumber" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="bankAccountNumber">Account Number:</label></td>
+                        <td><input type="text" id="bankAccountNumber" name="bankAccountNumber" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="bankSwiftCode">Swift Code:</label></td>
+                        <td><input type="text" id="bankSwiftCode" name="bankSwiftCode" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="bankIbanNumber">IBAN Number:</label></td>
+                        <td><input type="text" id="bankIbanNumber" name="bankIbanNumber" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="bankPin">Pin:</label></td>
+                        <td><input type="text" id="bankPin" name="bankPin" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="bankBranchAddress">Branch Address:</label></td>
+                        <td><input type="text" id="bankBranchAddress" name="bankBranchAddress" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="bankBranchPhone">Branch Phone:</label></td>
+                        <td><input type="text" id="bankBranchPhone" name="bankBranchPhone" autocomplete="off" /></td>
+                    </tr>
+                </table>
+                <button name="submitbankaccounts" onClick="submit('BankAccountsFieldSet')">Submit</button>
+            </fieldset>
+        </p>
 
-		<p>
-			<fieldset id="DriversLiscensesFieldSet">
-				<legend>Driver's Liscenses:</legend>
-				<table>
-					<tr>
-						<td><label for="liscenseNumber">Number:</label></td>
-						<td><input type="text" id="liscenseNumber" nameOnCard="liscenseNumber" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="liscenseExpirationDate">Expiration date:</label></td>
-						<td><input type="text" id="liscenseExpirationDate" name="liscenseExpirationDate" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="liscenseClass">Class:</label></td>
-						<td><input type="text" id="liscenseClass" name="liscenseClass" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="liscenceName">Name:</label></td>
-						<td><input type="text" id="liscenceName" name="liscenceName" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="liscenceAddress">Address:</label></td>
-						<td><input type="text" id="liscenceAddress" name="liscenceAddress" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="liscenceCitySlashTown">City / Town:</label></td>
-						<td><input type="text" id="liscenceCitySlashTown" name="liscenceCitySlashTown" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="liscenseState">State:</label></td>
-						<td><input type="text" id="liscenseState" name="liscenseState" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="liscenceZipSlashPostalCode">ZIP / Postal Code:</label></td>
-						<td><input type="text" id="liscenceZipSlashPostalCode" name="liscenceZipSlashPostalCode" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="liscenseCountry">Country:</label></td>
-						<td><input type="text" id="liscenseCountry" name="liscenseCountry" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="liscenseDateOfBirth">Date of Birth:</label></td>
-						<td><input type="text" id="liscenseDateOfBirth" name="liscenseDateOfBirth" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="liscenseSex">Sex:</label></td>
-						<td><input type="text" id="liscenseSex" name="liscenseSex" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="liscenseHeight">Height:</label></td>
-						<td><input type="text" id="liscenseHeight" name="liscenseHeight" autocomplete="off" /></td>
-					</tr>
-				</table>
-				<button name="submitidriversliscense" onClick="submit('PassportDriversLiscensesFieldSetsFieldSet')">Submit</button>
-			</fieldset>
-		</p>
+        <p>
+            <fieldset id="DriversLiscensesFieldSet">
+                <legend>Driver's Liscenses:</legend>
+                <table>
+                    <tr>
+                        <td><label for="liscenseNumber">Number:</label></td>
+                        <td><input type="text" id="liscenseNumber" nameOnCard="liscenseNumber" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="liscenseExpirationDate">Expiration date:</label></td>
+                        <td><input type="text" id="liscenseExpirationDate" name="liscenseExpirationDate" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="liscenseClass">Class:</label></td>
+                        <td><input type="text" id="liscenseClass" name="liscenseClass" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="liscenceName">Name:</label></td>
+                        <td><input type="text" id="liscenceName" name="liscenceName" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="liscenceAddress">Address:</label></td>
+                        <td><input type="text" id="liscenceAddress" name="liscenceAddress" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="liscenceCitySlashTown">City / Town:</label></td>
+                        <td><input type="text" id="liscenceCitySlashTown" name="liscenceCitySlashTown" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="liscenseState">State:</label></td>
+                        <td><input type="text" id="liscenseState" name="liscenseState" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="liscenceZipSlashPostalCode">ZIP / Postal Code:</label></td>
+                        <td><input type="text" id="liscenceZipSlashPostalCode" name="liscenceZipSlashPostalCode" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="liscenseCountry">Country:</label></td>
+                        <td><input type="text" id="liscenseCountry" name="liscenseCountry" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="liscenseDateOfBirth">Date of Birth:</label></td>
+                        <td><input type="text" id="liscenseDateOfBirth" name="liscenseDateOfBirth" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="liscenseSex">Sex:</label></td>
+                        <td><input type="text" id="liscenseSex" name="liscenseSex" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="liscenseHeight">Height:</label></td>
+                        <td><input type="text" id="liscenseHeight" name="liscenseHeight" autocomplete="off" /></td>
+                    </tr>
+                </table>
+                <button name="submitidriversliscense" onClick="submit('PassportDriversLiscensesFieldSetsFieldSet')">Submit</button>
+            </fieldset>
+        </p>
 
-		<p>
-			<fieldset id="PassportsFieldSet">
-				<legend>Passports:</legend>
-				<table>
-					<tr>
-						<td><label for="passportType">Type:</label></td>
-						<td><input type="text" id="passportType" nameOnCard="liscenseNumber" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="passportName">Name:</label></td>
-						<td><input type="text" id="passportName" name="passportName" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="passportCountry">Country:</label></td>
-						<td><input type="text" id="passportCountry" name="passportCountry" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="passportNumber">Number:</label></td>
-						<td><input type="text" id="passportNumber" name="passportNumber" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="passportSex">Sex:</label></td>
-						<td><input type="text" id="passportSex" name="passportSex" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="passportNationality">Nationality:</label></td>
-						<td><input type="text" id="passportNationality" name="passportNationality" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="passportIssuingAuthoirty">Issuing Authority:</label></td>
-						<td><input type="text" id="passportIssuingAuthoirty" name="passportIssuingAuthoirty" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="passportDateOfBirth">Date of Birth:</label></td>
-						<td><input type="text" id="passportDateOfBirth" name="passportDateOfBirth" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="passportIssuedDate">Issued Date:</label></td>
-						<td><input type="text" id="passportIssuedDate" name="passportIssuedDate" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="passportExpirationDate">Expiration Date:</label></td>
-						<td><input type="text" id="passportExpirationDate" name="passportExpirationDate" autocomplete="off" /></td>
-					</tr>
-				</table>
-				<button name="submitipassport" onClick="submit('PassportsFieldSet')">Submit</button>
-			</fieldset>
-		</p>
+        <p>
+            <fieldset id="PassportsFieldSet">
+                <legend>Passports:</legend>
+                <table>
+                    <tr>
+                        <td><label for="passportType">Type:</label></td>
+                        <td><input type="text" id="passportType" nameOnCard="liscenseNumber" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="passportName">Name:</label></td>
+                        <td><input type="text" id="passportName" name="passportName" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="passportCountry">Country:</label></td>
+                        <td><input type="text" id="passportCountry" name="passportCountry" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="passportNumber">Number:</label></td>
+                        <td><input type="text" id="passportNumber" name="passportNumber" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="passportSex">Sex:</label></td>
+                        <td><input type="text" id="passportSex" name="passportSex" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="passportNationality">Nationality:</label></td>
+                        <td><input type="text" id="passportNationality" name="passportNationality" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="passportIssuingAuthoirty">Issuing Authority:</label></td>
+                        <td><input type="text" id="passportIssuingAuthoirty" name="passportIssuingAuthoirty" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="passportDateOfBirth">Date of Birth:</label></td>
+                        <td><input type="text" id="passportDateOfBirth" name="passportDateOfBirth" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="passportIssuedDate">Issued Date:</label></td>
+                        <td><input type="text" id="passportIssuedDate" name="passportIssuedDate" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="passportExpirationDate">Expiration Date:</label></td>
+                        <td><input type="text" id="passportExpirationDate" name="passportExpirationDate" autocomplete="off" /></td>
+                    </tr>
+                </table>
+                <button name="submitipassport" onClick="submit('PassportsFieldSet')">Submit</button>
+            </fieldset>
+        </p>
 
-		<p>
-			<fieldset id="SSNFieldSet">
-				<legend>Social Security Numbers:</legend>
-				<table>
-					<tr>
-						<td><label for="ssnName">Name:</label></td>
-						<td><input type="text" id="ssnName" nameOnCard="ssnName" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="ssnNumber">Number:</label></td>
-						<td><input type="text" id="ssnNumber" name="ssnNumber" autocomplete="off" /></td>
-					</tr>
-				</table>
-				<button name="submitissn" onClick="submit('SSNFieldSet')">Submit</button>
-			</fieldset>
-		</p>
+        <p>
+            <fieldset id="SSNFieldSet">
+                <legend>Social Security Numbers:</legend>
+                <table>
+                    <tr>
+                        <td><label for="ssnName">Name:</label></td>
+                        <td><input type="text" id="ssnName" nameOnCard="ssnName" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="ssnNumber">Number:</label></td>
+                        <td><input type="text" id="ssnNumber" name="ssnNumber" autocomplete="off" /></td>
+                    </tr>
+                </table>
+                <button name="submitissn" onClick="submit('SSNFieldSet')">Submit</button>
+            </fieldset>
+        </p>
 
-		<p>
-			<fieldset id="INSFieldSet">
-				<legend>Insurance Policies:</legend>
-				<table>
-					<tr>
-						<td><label for="insCompany">Company:</label></td>
-						<td><input type="text" id="insCompany" nameOnCard="insCompany" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="insPolicyType">Policy Type:</label></td>
-						<td><input type="text" id="insPolicyType" name="insPolicyType" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="insPolicyNumber">Policy Number:</label></td>
-						<td><input type="text" id="insPolicyNumber" name="insPolicyNumber" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="insExpiration">Expiration:</label></td>
-						<td><input type="text" id="insExpiration" name="insExpiration" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="insAgentName">Agent Name:</label></td>
-						<td><input type="text" id="insAgentName" name="insAgentName" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="insAgentPhone">Agent Phone:</label></td>
-						<td><input type="text" id="insAgentPhone" name="insAgentPhone" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="insURL">URL:</label></td>
-						<td><input type="text" id="insURL" name="insURL" autocomplete="off" /></td>
-					</tr>
-				</table>
-				<button name="submitins" onClick="submit('INSFieldSet')">Submit</button>
-			</fieldset>
-		</p>
+        <p>
+            <fieldset id="INSFieldSet">
+                <legend>Insurance Policies:</legend>
+                <table>
+                    <tr>
+                        <td><label for="insCompany">Company:</label></td>
+                        <td><input type="text" id="insCompany" nameOnCard="insCompany" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="insPolicyType">Policy Type:</label></td>
+                        <td><input type="text" id="insPolicyType" name="insPolicyType" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="insPolicyNumber">Policy Number:</label></td>
+                        <td><input type="text" id="insPolicyNumber" name="insPolicyNumber" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="insExpiration">Expiration:</label></td>
+                        <td><input type="text" id="insExpiration" name="insExpiration" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="insAgentName">Agent Name:</label></td>
+                        <td><input type="text" id="insAgentName" name="insAgentName" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="insAgentPhone">Agent Phone:</label></td>
+                        <td><input type="text" id="insAgentPhone" name="insAgentPhone" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="insURL">URL:</label></td>
+                        <td><input type="text" id="insURL" name="insURL" autocomplete="off" /></td>
+                    </tr>
+                </table>
+                <button name="submitins" onClick="submit('INSFieldSet')">Submit</button>
+            </fieldset>
+        </p>
 
-		<p>
-			<fieldset id="HINSFieldSet">
-				<legend>Health Insurance Policies:</legend>
-				<table>
-					<tr>
-						<td><label for="hinsCompany">Company:</label></td>
-						<td><input type="text" id="hinsCompany" nameOnCard="hinsCompany" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="hinsCompanyPhone">Company Phone:</label></td>
-						<td><input type="text" id="hinsCompanyPhone" nameOnCard="hinsCompanyPhone" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="hinsPolicyType">Policy Type:</label></td>
-						<td><input type="text" id="hinsPolicyType" name="hinsPolicyType" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="hinsPolicyNumber">Policy Number:</label></td>
-						<td><input type="text" id="hinsPolicyNumber" name="hinsPolicyNumber" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="hinsGroupId">Group ID:</label></td>
-						<td><input type="text" id="hinsGroupId" name="hinsGroupId" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="hinsMemberName">Member Name:</label></td>
-						<td><input type="text" id="hinsGroupId" name="hinsGroupId" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="hinsMemberID">Member ID:</label></td>
-						<td><input type="text" id="hinsMemberID" name="hinsMemberID" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="hinsPhysicianName">Physician Name:</label></td>
-						<td><input type="text" id="hinsPhysicianName" name="hinsPhysicianName" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="hinsPhysicianPhone">Physician Phone:</label></td>
-						<td><input type="text" id="hinsPhysicianPhone" name="hinsPhysicianPhone" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="hinsPhysicianAddress">Physician Address:</label></td>
-						<td><input type="text" id="hinsPhysicianAddress" name="hinsPhysicianAddress" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="hinsCoPay">Co-pay:</label></td>
-						<td><input type="text" id="hinsCoPay" name="hinsCoPay" autocomplete="off" /></td>
-					</tr>
-				</table>
-				<button name="submithins" onClick="submit('HINSFieldSet')">Submit</button>
-			</fieldset>
-		</p>
+        <p>
+            <fieldset id="HINSFieldSet">
+                <legend>Health Insurance Policies:</legend>
+                <table>
+                    <tr>
+                        <td><label for="hinsCompany">Company:</label></td>
+                        <td><input type="text" id="hinsCompany" nameOnCard="hinsCompany" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="hinsCompanyPhone">Company Phone:</label></td>
+                        <td><input type="text" id="hinsCompanyPhone" nameOnCard="hinsCompanyPhone" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="hinsPolicyType">Policy Type:</label></td>
+                        <td><input type="text" id="hinsPolicyType" name="hinsPolicyType" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="hinsPolicyNumber">Policy Number:</label></td>
+                        <td><input type="text" id="hinsPolicyNumber" name="hinsPolicyNumber" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="hinsGroupId">Group ID:</label></td>
+                        <td><input type="text" id="hinsGroupId" name="hinsGroupId" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="hinsMemberName">Member Name:</label></td>
+                        <td><input type="text" id="hinsMemberName" name="hinsMemberName" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="hinsMemberID">Member ID:</label></td>
+                        <td><input type="text" id="hinsMemberID" name="hinsMemberID" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="hinsPhysicianName">Physician Name:</label></td>
+                        <td><input type="text" id="hinsPhysicianName" name="hinsPhysicianName" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="hinsPhysicianPhone">Physician Phone:</label></td>
+                        <td><input type="text" id="hinsPhysicianPhone" name="hinsPhysicianPhone" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="hinsPhysicianAddress">Physician Address:</label></td>
+                        <td><input type="text" id="hinsPhysicianAddress" name="hinsPhysicianAddress" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="hinsCoPay">Co-pay:</label></td>
+                        <td><input type="text" id="hinsCoPay" name="hinsCoPay" autocomplete="off" /></td>
+                    </tr>
+                </table>
+                <button name="submithins" onClick="submit('HINSFieldSet')">Submit</button>
+            </fieldset>
+        </p>
 
-		<p>
-			<fieldset id="MembershipsFieldSet">
-				<legend>Memberships:</legend>
-				<table>
-					<tr>
-						<td><label for="membershipOrganization">Company:</label></td>
-						<td><input type="text" id="membershipOrganization" nameOnCard="membershipOrganization" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="membershipNumber">Company Phone:</label></td>
-						<td><input type="text" id="membershipNumber" nameOnCard="membershipNumber" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="membershipName">Policy Type:</label></td>
-						<td><input type="text" id="membershipName" name="membershipName" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="membershipStartDate">Policy Number:</label></td>
-						<td><input type="text" id="membershipStartDate" name="membershipStartDate" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="membershipExpirationDate">Group ID:</label></td>
-						<td><input type="text" id="membershipExpirationDate" name="membershipExpirationDate" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="membershipWebsite">Member Name:</label></td>
-						<td><input type="text" id="membershipWebsite" name="membershipWebsite" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="membershipTelephone">Member ID:</label></td>
-						<td><input type="text" id="membershipTelephone" name="membershipTelephone" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="membershipPassword">Physician Name:</label></td>
-						<td><input type="text" id="membershipPassword" name="membershipPassword" autocomplete="off" /></td>
-					</tr>
-				</table>
-				<button name="submitmembership" onClick="submit('MembershipsFieldSet')">Submit</button>
-			</fieldset>
-		</p>
+        <p>
+            <fieldset id="MembershipsFieldSet">
+                <legend>Memberships:</legend>
+                <table>
+                    <tr>
+                        <td><label for="membershipOrganization">Company:</label></td>
+                        <td><input type="text" id="membershipOrganization" nameOnCard="membershipOrganization" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="membershipNumber">Company Phone:</label></td>
+                        <td><input type="text" id="membershipNumber" nameOnCard="membershipNumber" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="membershipName">Policy Type:</label></td>
+                        <td><input type="text" id="membershipName" name="membershipName" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="membershipStartDate">Policy Number:</label></td>
+                        <td><input type="text" id="membershipStartDate" name="membershipStartDate" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="membershipExpirationDate">Group ID:</label></td>
+                        <td><input type="text" id="membershipExpirationDate" name="membershipExpirationDate" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="membershipWebsite">Member Name:</label></td>
+                        <td><input type="text" id="membershipWebsite" name="membershipWebsite" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="membershipTelephone">Member ID:</label></td>
+                        <td><input type="text" id="membershipTelephone" name="membershipTelephone" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="membershipPassword">Physician Name:</label></td>
+                        <td><input type="text" id="membershipPassword" name="membershipPassword" autocomplete="off" /></td>
+                    </tr>
+                </table>
+                <button name="submitmembership" onClick="submit('MembershipsFieldSet')">Submit</button>
+            </fieldset>
+        </p>
 
-		<p>
-			<fieldset id="WifiPasswordsFieldSet">
-				<legend>Wi-Fi Passwords:</legend>
-				<table>
-					<tr>
-						<td><label for="wifiSsid">SSID:</label></td>
-						<td><input type="text" id="wifiSsid" nameOnCard="wifiSsid" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="wifiPassword">Password:</label></td>
-						<td><input type="text" id="wifiPassword" nameOnCard="wifiPassword" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="wifiConnectionType">Connection Type:</label></td>
-						<td><input type="text" id="wifiConnectionType" name="wifiConnectionType" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="wifiConnectionMode">Connection Mode:</label></td>
-						<td><input type="text" id="wifiConnectionMode" name="wifiConnectionMode" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="wifiAuthentication">Authentication:</label></td>
-						<td><input type="text" id="wifiAuthentication" name="wifiAuthentication" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="wifiEncryption">Encryption:</label></td>
-						<td><input type="text" id="wifiEncryption" name="wifiEncryption" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="wifiUse802dot1x">Use 802.1X:</label></td>
-						<td><input type="text" id="wifiUse802dot1x" name="wifiUse802dot1x" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="wifiFipsMode">FIPS Mode:</label></td>
-						<td><input type="text" id="wifiFipsMode" name="wifiFipsMode" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="wifiKeyType">Key Type:</label></td>
-						<td><input type="text" id="wifiKeyType" name="wifiKeyType" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="wifiProtected">Protected:</label></td>
-						<td><input type="text" id="wifiProtected" name="wifiProtected" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="wifiKeyIndex">Key Index:</label></td>
-						<td><input type="text" id="wifiKeyIndex" name="wifiKeyIndex" autocomplete="off" /></td>
-					</tr>
-				</table>
-				<button name="submitwifi" onClick="submit('WifiPasswordsFieldSet')">Submit</button>
-			</fieldset>
-		</p>
+        <p>
+            <fieldset id="WifiPasswordsFieldSet">
+                <legend>Wi-Fi Passwords:</legend>
+                <table>
+                    <tr>
+                        <td><label for="wifiSsid">SSID:</label></td>
+                        <td><input type="text" id="wifiSsid" nameOnCard="wifiSsid" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="wifiPassword">Password:</label></td>
+                        <td><input type="text" id="wifiPassword" nameOnCard="wifiPassword" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="wifiConnectionType">Connection Type:</label></td>
+                        <td><input type="text" id="wifiConnectionType" name="wifiConnectionType" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="wifiConnectionMode">Connection Mode:</label></td>
+                        <td><input type="text" id="wifiConnectionMode" name="wifiConnectionMode" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="wifiAuthentication">Authentication:</label></td>
+                        <td><input type="text" id="wifiAuthentication" name="wifiAuthentication" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="wifiEncryption">Encryption:</label></td>
+                        <td><input type="text" id="wifiEncryption" name="wifiEncryption" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="wifiUse802dot1x">Use 802.1X:</label></td>
+                        <td><input type="text" id="wifiUse802dot1x" name="wifiUse802dot1x" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="wifiFipsMode">FIPS Mode:</label></td>
+                        <td><input type="text" id="wifiFipsMode" name="wifiFipsMode" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="wifiKeyType">Key Type:</label></td>
+                        <td><input type="text" id="wifiKeyType" name="wifiKeyType" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="wifiProtected">Protected:</label></td>
+                        <td><input type="text" id="wifiProtected" name="wifiProtected" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="wifiKeyIndex">Key Index:</label></td>
+                        <td><input type="text" id="wifiKeyIndex" name="wifiKeyIndex" autocomplete="off" /></td>
+                    </tr>
+                </table>
+                <button name="submitwifi" onClick="submit('WifiPasswordsFieldSet')">Submit</button>
+            </fieldset>
+        </p>
 
-		<p>
-			<fieldset id="EmailAccountsFieldSet">
-				<legend>Email Accounts:</legend>
-				<table>
-					<tr>
-						<td><label for="emailUsername">Username:</label></td>
-						<td><input type="text" id="emailUsername" nameOnCard="emailUsername" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="emailPassword">Password:</label></td>
-						<td><input type="text" id="emailPassword" nameOnCard="emailPassword" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="emailServer">Server:</label></td>
-						<td><input type="text" id="emailServer" name="emailServer" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="emailPort">Port:</label></td>
-						<td><input type="text" id="emailPort" name="emailPort" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="emailType">Type:</label></td>
-						<td><input type="text" id="emailType" name="emailType" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="emailSMTPServer">SMTP Server:</label></td>
-						<td><input type="text" id="emailSMTPServer" name="emailSMTPServer" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="emailSMTPPort">SMTP Port:</label></td>
-						<td><input type="text" id="emailSMTPPort" name="emailSMTPPort" autocomplete="off" /></td>
-					</tr>
-				</table>
-				<button name="submitemail" onClick="submit('EmailAccountsFieldSet')">Submit</button>
-			</fieldset>
-		</p>
+        <p>
+            <fieldset id="EmailAccountsFieldSet">
+                <legend>Email Accounts:</legend>
+                <table>
+                    <tr>
+                        <td><label for="emailUsername">Username:</label></td>
+                        <td><input type="text" id="emailUsername" nameOnCard="emailUsername" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="emailPassword">Password:</label></td>
+                        <td><input type="text" id="emailPassword" nameOnCard="emailPassword" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="emailServer">Server:</label></td>
+                        <td><input type="text" id="emailServer" name="emailServer" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="emailPort">Port:</label></td>
+                        <td><input type="text" id="emailPort" name="emailPort" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="emailType">Type:</label></td>
+                        <td><input type="text" id="emailType" name="emailType" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="emailSMTPServer">SMTP Server:</label></td>
+                        <td><input type="text" id="emailSMTPServer" name="emailSMTPServer" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="emailSMTPPort">SMTP Port:</label></td>
+                        <td><input type="text" id="emailSMTPPort" name="emailSMTPPort" autocomplete="off" /></td>
+                    </tr>
+                </table>
+                <button name="submitemail" onClick="submit('EmailAccountsFieldSet')">Submit</button>
+            </fieldset>
+        </p>
 
-		<p>
-			<fieldset id="InstantMessengersFieldSet">
-				<legend>Instant Messengers:</legend>
-				<table>
-					<tr>
-						<td><label for="imType">Type:</label></td>
-						<td><input type="text" id="imType" nameOnCard="imType" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="imUsername">Username:</label></td>
-						<td><input type="text" id="imUsername" nameOnCard="imUsername" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="imPassword">Password:</label></td>
-						<td><input type="text" id="imPassword" name="imPassword" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="imServer">Server:</label></td>
-						<td><input type="text" id="imServer" name="imServer" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="imPort">Port:</label></td>
-						<td><input type="text" id="imPort" name="imPort" autocomplete="off" /></td>
-					</tr>
-				</table>
-				<button name="submitim" onClick="submit('InstantMessengersFieldSet')">Submit</button>
-			</fieldset>
-		</p>
+        <p>
+            <fieldset id="InstantMessengersFieldSet">
+                <legend>Instant Messengers:</legend>
+                <table>
+                    <tr>
+                        <td><label for="imType">Type:</label></td>
+                        <td><input type="text" id="imType" nameOnCard="imType" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="imUsername">Username:</label></td>
+                        <td><input type="text" id="imUsername" nameOnCard="imUsername" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="imPassword">Password:</label></td>
+                        <td><input type="text" id="imPassword" name="imPassword" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="imServer">Server:</label></td>
+                        <td><input type="text" id="imServer" name="imServer" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="imPort">Port:</label></td>
+                        <td><input type="text" id="imPort" name="imPort" autocomplete="off" /></td>
+                    </tr>
+                </table>
+                <button name="submitim" onClick="submit('InstantMessengersFieldSet')">Submit</button>
+            </fieldset>
+        </p>
 
-		<p>
-			<fieldset id="DatabasesFieldSet">
-				<legend>Databases:</legend>
-				<table>
-					<tr>
-						<td><label for="dbType">Type:</label></td>
-						<td><input type="text" id="dbType" nameOnCard="dbType" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="dbHostname">Hostname:</label></td>
-						<td><input type="text" id="dbHostname" nameOnCard="dbHostname" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="dbPort">Port:</label></td>
-						<td><input type="text" id="dbPort" name="dbPort" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="dbDatabase">Database:</label></td>
-						<td><input type="text" id="dbDatabase" name="dbDatabase" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="dbUsername">Username:</label></td>
-						<td><input type="text" id="dbUsername" name="dbUsername" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="dbPassword">Password:</label></td>
-						<td><input type="text" id="dbPassword" name="dbPassword" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="dbSid">SID:</label></td>
-						<td><input type="text" id="dbSid" name="dbSid" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="dbAlias">Alias:</label></td>
-						<td><input type="text" id="dbAlias" name="dbAlias" autocomplete="off" /></td>
-					</tr>
-				</table>
-				<button name="submitdb" onClick="submit('DatabasesFieldSet')">Submit</button>
-			</fieldset>
-		</p>
+        <p>
+            <fieldset id="DatabasesFieldSet">
+                <legend>Databases:</legend>
+                <table>
+                    <tr>
+                        <td><label for="dbType">Type:</label></td>
+                        <td><input type="text" id="dbType" nameOnCard="dbType" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="dbHostname">Hostname:</label></td>
+                        <td><input type="text" id="dbHostname" nameOnCard="dbHostname" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="dbPort">Port:</label></td>
+                        <td><input type="text" id="dbPort" name="dbPort" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="dbDatabase">Database:</label></td>
+                        <td><input type="text" id="dbDatabase" name="dbDatabase" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="dbUsername">Username:</label></td>
+                        <td><input type="text" id="dbUsername" name="dbUsername" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="dbPassword">Password:</label></td>
+                        <td><input type="text" id="dbPassword" name="dbPassword" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="dbSid">SID:</label></td>
+                        <td><input type="text" id="dbSid" name="dbSid" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="dbAlias">Alias:</label></td>
+                        <td><input type="text" id="dbAlias" name="dbAlias" autocomplete="off" /></td>
+                    </tr>
+                </table>
+                <button name="submitdb" onClick="submit('DatabasesFieldSet')">Submit</button>
+            </fieldset>
+        </p>
 
-		<p>
-			<fieldset id="ServersFieldSet">
-				<legend>Servers:</legend>
-				<table>
-					<tr>
-						<td><label for="serverHostname">Hostname:</label></td>
-						<td><input type="text" id="serverHostname" nameOnCard="serverHostname" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="serverUsername">Username:</label></td>
-						<td><input type="text" id="serverUsername" name="serverUsername" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="serverPassword">Password:</label></td>
-						<td><input type="text" id="serverPassword" name="serverPassword" autocomplete="off" /></td>
-					</tr>
-				</table>
-				<button name="submitserver" onClick="submit('ServersFieldSet')">Submit</button>
-			</fieldset>
-		</p>
+        <p>
+            <fieldset id="ServersFieldSet">
+                <legend>Servers:</legend>
+                <table>
+                    <tr>
+                        <td><label for="serverHostname">Hostname:</label></td>
+                        <td><input type="text" id="serverHostname" nameOnCard="serverHostname" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="serverUsername">Username:</label></td>
+                        <td><input type="text" id="serverUsername" name="serverUsername" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="serverPassword">Password:</label></td>
+                        <td><input type="text" id="serverPassword" name="serverPassword" autocomplete="off" /></td>
+                    </tr>
+                </table>
+                <button name="submitserver" onClick="submit('ServersFieldSet')">Submit</button>
+            </fieldset>
+        </p>
 
-		<p>
-			<fieldset id="SSHKeysFieldSet">
-				<legend>SSH Key:</legend>
-				<table>
-					<tr>
-						<td><label for="sshBitStrength">Bit Strength:</label></td>
-						<td><input type="text" id="sshBitStrength" nameOnCard="sshBitStrength" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="sshFormat">Format:</label></td>
-						<td><input type="text" id="sshFormat" name="sshFormat" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="sshPassphrase">Passphrase:</label></td>
-						<td><input type="text" id="sshPassphrase" name="sshPassphrase" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="sshPrivateKey">Private Key:</label></td>
-						<td><input type="text" id="sshPrivateKey" name="sshPrivateKey" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="sshPublicKey">Public Key:</label></td>
-						<td><input type="text" id="sshPublicKey" name="sshPublicKey" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="sshHostname">Hostname:</label></td>
-						<td><input type="text" id="sshHostname" name="sshHostname" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="sshDate">Date:</label></td>
-						<td><input type="text" id="sshDate" name="sshDate" autocomplete="off" /></td>
-					</tr>
-				</table>
-				<button name="submitssh" onClick="submit('SSHKeysFieldSet')">Submit</button>
-			</fieldset>
-		</p>
+        <p>
+            <fieldset id="SSHKeysFieldSet">
+                <legend>SSH Key:</legend>
+                <table>
+                    <tr>
+                        <td><label for="sshBitStrength">Bit Strength:</label></td>
+                        <td><input type="text" id="sshBitStrength" nameOnCard="sshBitStrength" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="sshFormat">Format:</label></td>
+                        <td><input type="text" id="sshFormat" name="sshFormat" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="sshPassphrase">Passphrase:</label></td>
+                        <td><input type="text" id="sshPassphrase" name="sshPassphrase" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="sshPrivateKey">Private Key:</label></td>
+                        <td><input type="text" id="sshPrivateKey" name="sshPrivateKey" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="sshPublicKey">Public Key:</label></td>
+                        <td><input type="text" id="sshPublicKey" name="sshPublicKey" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="sshHostname">Hostname:</label></td>
+                        <td><input type="text" id="sshHostname" name="sshHostname" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="sshDate">Date:</label></td>
+                        <td><input type="text" id="sshDate" name="sshDate" autocomplete="off" /></td>
+                    </tr>
+                </table>
+                <button name="submitssh" onClick="submit('SSHKeysFieldSet')">Submit</button>
+            </fieldset>
+        </p>
 
-		<p>
-			<fieldset id="SoftwareLiscensesFieldSet">
-				<legend>Software Liscenses:</legend>
-				<table>
-					<tr>
-						<td><label for="sflcKey">License Key:</label></td>
-						<td><input type="text" id="sflcKey" nameOnCard="sflcKey" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="sflcLicensee">Licensee:</label></td>
-						<td><input type="text" id="sflcLicensee" name="sflcLicensee" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="sflcVersion">Version:</label></td>
-						<td><input type="text" id="sflcVersion" name="sflcVersion" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="sflcPublisher">Publisher:</label></td>
-						<td><input type="text" id="sflcPublisher" name="sflcPublisher" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="sflcSupportEmail">Support Email:</label></td>
-						<td><input type="text" id="sflcSupportEmail" name="sflcSupportEmail" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="sflcWebsite">Website:</label></td>
-						<td><input type="text" id="sflcWebsite" name="sflcWebsite" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="sflcPrice">Price:</label></td>
-						<td><input type="text" id="sflcPrice" name="sflcPrice" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="sflcPurchaseDate">Purchase Date:</label></td>
-						<td><input type="text" id="sflcPurchaseDate" name="sflcPurchaseDate" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="sflcOrderNumber">Order Number:</label></td>
-						<td><input type="text" id="sflcOrderNumber" name="sflcOrderNumber" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="sflcNumberOfLicenses">Number of Licenses:</label></td>
-						<td><input type="text" id="sflcNumberOfLicenses" name="sflcNumberOfLicenses" autocomplete="off" /></td>
-					</tr>
-					<tr>
-						<td><label for="sflcOrderTotal">Order Total:</label></td>
-						<td><input type="text" id="sflcOrderTotal" name="sflcOrderTotal" autocomplete="off" /></td>
-					</tr>
-				</table>
-				<button name="submitsoftwareliscense" onClick="submit('SoftwareLiscensesFieldSet')">Submit</button>
-			</fieldset>
-		</p>
+        <p>
+            <fieldset id="SoftwareLiscensesFieldSet">
+                <legend>Software Liscenses:</legend>
+                <table>
+                    <tr>
+                        <td><label for="sflcKey">License Key:</label></td>
+                        <td><input type="text" id="sflcKey" nameOnCard="sflcKey" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="sflcLicensee">Licensee:</label></td>
+                        <td><input type="text" id="sflcLicensee" name="sflcLicensee" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="sflcVersion">Version:</label></td>
+                        <td><input type="text" id="sflcVersion" name="sflcVersion" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="sflcPublisher">Publisher:</label></td>
+                        <td><input type="text" id="sflcPublisher" name="sflcPublisher" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="sflcSupportEmail">Support Email:</label></td>
+                        <td><input type="text" id="sflcSupportEmail" name="sflcSupportEmail" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="sflcWebsite">Website:</label></td>
+                        <td><input type="text" id="sflcWebsite" name="sflcWebsite" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="sflcPrice">Price:</label></td>
+                        <td><input type="text" id="sflcPrice" name="sflcPrice" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="sflcPurchaseDate">Purchase Date:</label></td>
+                        <td><input type="text" id="sflcPurchaseDate" name="sflcPurchaseDate" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="sflcOrderNumber">Order Number:</label></td>
+                        <td><input type="text" id="sflcOrderNumber" name="sflcOrderNumber" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="sflcNumberOfLicenses">Number of Licenses:</label></td>
+                        <td><input type="text" id="sflcNumberOfLicenses" name="sflcNumberOfLicenses" autocomplete="off" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="sflcOrderTotal">Order Total:</label></td>
+                        <td><input type="text" id="sflcOrderTotal" name="sflcOrderTotal" autocomplete="off" /></td>
+                    </tr>
+                </table>
+                <button name="submitsoftwareliscense" onClick="submit('SoftwareLiscensesFieldSet')">Submit</button>
+            </fieldset>
+        </p>
 
-		<!-- <button name="submitall" onClick="submitall()">Submit All</button > -->
+        <!-- <button name="submitall" onClick="submitall()">Submit All</button > -->
 
-		<button name="populateall" onClick="populateall()">Populate All</button>
+        <button name="populateall" onClick="populateall()">Populate All</button>
 
-		<button name="clearall" onClick="clearall()">Clear All</button>
+        <button name="clearall" onClick="clearall()">Clear All</button>
 
-	</div>
+    </div>
 
-	<script type="text/javascript">
-		function startup() {
-			if (window.location.search) {
-				window.location.href = window.location.pathname;
-			}
-      document.getElementById('ajaxLogin').addEventListener('click', function() {
-        var form = new FormData(document.getElementById('login-form'));
-        fetch("", {
-          method: "POST",
-          body: form
-        });
-      });
-		};
-		/*
-		function submitall(){
-			var formFields = document.getElementsByTagName('input');
-			var outSearchString = "?";
-			for (var i = 0; i < formFields.length; i++) {
-				if(formFields[i].value != '' && formFields[i].id != ''){
-					outSearchString = outSearchString + formFields[i].id + "=" + formFields[i].value + '&';
-				}
-			}
-			window.location = "LastPassResult.html" + outSearchString;
-			return false;
-		}
-		*/
-		function populateall() {
-			var formFields = document.getElementsByTagName('input');
-			for (var i = 0; i < formFields.length; i++) {
-				var type = formFields[i].type;
-				console.log(type);
-				if (type = "text") {
-					formFields[i].value = randomString(formFields[i].id);
-				}
-			}
-			return false;
-		}
+    <script type="text/javascript">
+        function startup() {
+            if (window.location.search) {
+                window.location.href = window.location.pathname;
+            }
+            // Multi-part Form approach
+            // Disabled for now, as this was returning a 405 from github.
+            // document.getElementById('ajaxLogin').addEventListener('click', function () {
+            //     var form = new FormData(document.getElementById('login-form'));
+            //     fetch('', {
+            //         method: 'POST',
+            //         body: form
+            //     });
+            // });
+            // Application/JSON approach
+            // Using AWS API Gateway as a remote source. Using mock integrations there
+            // to return a 200 whenever this API is called.
+            document.getElementById('ajaxLogin').addEventListener('click', function() {
+                var email = document.getElementById('crEmail').value;
+                var password = document.getElementById('crPassword').value;
+                fetch('https://jfha5on7o2.execute-api.us-east-1.amazonaws.com/live/login', {
+                    cache: 'no-cache',
+                    headers: {
+                      'content-type': 'application/json'
+                    },
+                    method: 'POST',
+                    mode: 'cors',
+                    redirect: 'follow',
+                    referrer: 'no-referrer',
+                    body: JSON.stringify({
+                        username: email,
+                        password: password
+                    })
+                });
+            });
+        };
+        /*
+        function submitall(){
+            var formFields = document.getElementsByTagName('input');
+            var outSearchString = "?";
+            for (var i = 0; i < formFields.length; i++) {
+                if(formFields[i].value != '' && formFields[i].id != ''){
+                    outSearchString = outSearchString + formFields[i].id + "=" + formFields[i].value + '&';
+                }
+            }
+            window.location = "LastPassResult.html" + outSearchString;
+            return false;
+        }
+        */
+        function populateall() {
+            var formFields = document.getElementsByTagName('input');
+            for (var i = 0; i < formFields.length; i++) {
+                var type = formFields[i].type;
+                console.log(type);
+                if (type = "text") {
+                    formFields[i].value = randomString(formFields[i].id);
+                }
+            }
+            return false;
+        }
 
-		function clearall() {
-			var formFields = document.getElementsByTagName('input');
-			for (var i = 0; i < formFields.length; i++) {
-				formFields[i].value = '';
-			}
-			return false;
-		}
+        function clearall() {
+            var formFields = document.getElementsByTagName('input');
+            for (var i = 0; i < formFields.length; i++) {
+                formFields[i].value = '';
+            }
+            return false;
+        }
 
-		function submit(fieldSet) {
-			var fieldSets = document.getElementsByTagName('fieldset');
-			var fieldSet;
-			for (var i = 0; i < fieldSets.length; i++) {
-				if (fieldSets[i].id == fieldSet) {
-					fieldSet = fieldSets[i];
-					break;
-				}
-			}
-			if (fieldSet) {
-				var formFields = fieldSet.getElementsByTagName('input');
-				var outSearchString = "?";
-				for (var i = 0; i < formFields.length; i++) {
-					if (formFields[i].value != '' && formFields[i].id != '') {
-						outSearchString = outSearchString + formFields[i].id + "=" + formFields[i].value + '&';
-					}
-				}
-				window.location = "LastPassResult.html" + outSearchString;
-			}
-			return false;
-		}
+        function submit(fieldSet) {
+            var fieldSets = document.getElementsByTagName('fieldset');
+            var fieldSet;
+            for (var i = 0; i < fieldSets.length; i++) {
+                if (fieldSets[i].id == fieldSet) {
+                    fieldSet = fieldSets[i];
+                    break;
+                }
+            }
+            if (fieldSet) {
+                var formFields = fieldSet.getElementsByTagName('input');
+                var outSearchString = "?";
+                for (var i = 0; i < formFields.length; i++) {
+                    if (formFields[i].value != '' && formFields[i].id != '') {
+                        outSearchString = outSearchString + formFields[i].id + "=" + formFields[i].value + '&';
+                    }
+                }
+                window.location = "LastPassResult.html" + outSearchString;
+            }
+            return false;
+        }
 
-		function randomString(id) {
-			var length = 16;
-			var result = id + '-';
-			var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-			for (var i = length; i > 0; --i) {
-				result += chars[Math.floor(Math.random() * chars.length)];
-			}
-			return result;
-		}
-	</script>
+        function randomString(id) {
+            var length = 16;
+            var result = id + '-';
+            var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            for (var i = length; i > 0; --i) {
+                result += chars[Math.floor(Math.random() * chars.length)];
+            }
+            return result;
+        }
+    </script>
 
-	<style>
-		ul {
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-			overflow: hidden;
-			background-color: #333333;
-			width: 1000px;
-		}
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333333;
+            width: 1000px;
+        }
 
-		li {
-			float: left;
-		}
+        li {
+            float: left;
+        }
 
-		li a {
-			display: block;
-			color: white;
-			text-align: center;
-			padding: 16px;
-			text-decoration: none;
-		}
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+        }
 
-		li a:hover {
-			background-color: #111111;
-		}
-		
-		fieldset {
-			width: 350px;
-		}
+        li a:hover {
+            background-color: #111111;
+        }
 
-		table {
-			width: 350px;
-			align-content: left;
-		}
+        fieldset {
+            width: 350px;
+        }
 
-		input {
-			line-height: 2;
-		}
+        table {
+            width: 350px;
+            align-content: left;
+        }
 
-		.container {
-			width: 500px;
-			clear: both;
-		}
+        input {
+            line-height: 2;
+        }
 
-		.container input {
-			width: 100%;
-			clear: both;
-		}
+        .container {
+            width: 500px;
+            clear: both;
+        }
 
-		.no-spin::-webkit-inner-spin-button,
-		.no-spin::-webkit-outer-spin-button {
-			-webkit-appearance: none !important;
-			margin: 0 !important;
-			-moz-appearance: textfield !important;
-		}
-	</style>
+        .container input {
+            width: 100%;
+            clear: both;
+        }
+
+        .no-spin::-webkit-inner-spin-button,
+        .no-spin::-webkit-outer-spin-button {
+            -webkit-appearance: none !important;
+            margin: 0 !important;
+            -moz-appearance: textfield !important;
+        }
+    </style>
 
 </body>
 
