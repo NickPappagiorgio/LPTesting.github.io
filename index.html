@@ -1,6 +1,66 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+    <title>LPTesting Forms</title>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333333;
+            width: 1000px;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #111111;
+        }
+
+        fieldset {
+            width: 350px;
+        }
+
+        table {
+            width: 350px;
+            align-content: left;
+        }
+
+        input {
+            line-height: 2;
+        }
+
+        .container {
+            width: 500px;
+            clear: both;
+        }
+
+        .container input {
+            width: 100%;
+            clear: both;
+        }
+
+        .no-spin::-webkit-inner-spin-button,
+        .no-spin::-webkit-outer-spin-button {
+            -webkit-appearance: none !important;
+            margin: 0 !important;
+            -moz-appearance: textfield !important;
+        }
+    </style>
+</head>
+
 <body onload="startup()">
     <ul class="menubar">
         <li><a id="m_address" href="/address.html">Address</a></li>
@@ -14,6 +74,7 @@
         <li><a id="m_membership" href="/membership.html">Membership</a></li>
         <li><a id="m_passport" href="/passport.html">Passport</a></li>
         <li><a id="m_password" href="/password.html">Password</a></li>
+        <li><a id="m_passwordchange" href="/password-change.html">Password Change</a></li>
         <li><a id="m_registration" href="/registration.html">Registration</a></li>
         <li><a id="m_paymentcard" href="/paymentcard.html">Payment card</a></li>
         <li><a id="m_paymentcard2" href="/paymentcard2.html">Payment card 2</a></li>
@@ -35,11 +96,12 @@
                     <table>
                         <tr>
                             <td><label for="crEmail">Email:</label></td>
-                            <td><input type="email" id="crEmail" name="crEmail" placeholder="Enter Email" required/></td>
+                            <td><input type="email" id="crEmail" name="crEmail" placeholder="Enter Email" required /></td>
                         </tr>
                         <tr>
                             <td><label for="crPassword">Password:</label></td>
-                            <td><input type="password" id="crPassword" name="crPassword" placeholder="Enter Password" required/></td>
+                            <td><input type="password" id="crPassword" name="crPassword" placeholder="Enter Password"
+                                    required /></td>
                         </tr>
                     </table>
                     <br>
@@ -169,7 +231,8 @@
                     </tr>
                     <tr>
                         <td><label for="payExpirationDate2">Expiration Date:</label></td>
-                        <td><input type="date" class="no-spin" id="payExpirationDate" name="payExpirationDate" autocomplete="off" /></td>
+                        <td><input type="date" class="no-spin" id="payExpirationDate" name="payExpirationDate"
+                                autocomplete="off" /></td>
                     </tr>
                 </table>
                 <button name="submitpaymentcards" onClick="submit('PaymentCardsFieldSet')">Submit</button>
@@ -255,7 +318,8 @@
                     </tr>
                     <tr>
                         <td><label for="liscenceZipSlashPostalCode">ZIP / Postal Code:</label></td>
-                        <td><input type="text" id="liscenceZipSlashPostalCode" name="liscenceZipSlashPostalCode" autocomplete="off" /></td>
+                        <td><input type="text" id="liscenceZipSlashPostalCode" name="liscenceZipSlashPostalCode"
+                                autocomplete="off" /></td>
                     </tr>
                     <tr>
                         <td><label for="liscenseCountry">Country:</label></td>
@@ -308,7 +372,8 @@
                     </tr>
                     <tr>
                         <td><label for="passportIssuingAuthoirty">Issuing Authority:</label></td>
-                        <td><input type="text" id="passportIssuingAuthoirty" name="passportIssuingAuthoirty" autocomplete="off" /></td>
+                        <td><input type="text" id="passportIssuingAuthoirty" name="passportIssuingAuthoirty"
+                                autocomplete="off" /></td>
                     </tr>
                     <tr>
                         <td><label for="passportDateOfBirth">Date of Birth:</label></td>
@@ -440,7 +505,8 @@
                 <table>
                     <tr>
                         <td><label for="membershipOrganization">Company:</label></td>
-                        <td><input type="text" id="membershipOrganization" nameOnCard="membershipOrganization" autocomplete="off" /></td>
+                        <td><input type="text" id="membershipOrganization" nameOnCard="membershipOrganization"
+                                autocomplete="off" /></td>
                     </tr>
                     <tr>
                         <td><label for="membershipNumber">Company Phone:</label></td>
@@ -456,7 +522,8 @@
                     </tr>
                     <tr>
                         <td><label for="membershipExpirationDate">Group ID:</label></td>
-                        <td><input type="text" id="membershipExpirationDate" name="membershipExpirationDate" autocomplete="off" /></td>
+                        <td><input type="text" id="membershipExpirationDate" name="membershipExpirationDate"
+                                autocomplete="off" /></td>
                     </tr>
                     <tr>
                         <td><label for="membershipWebsite">Member Name:</label></td>
@@ -771,13 +838,13 @@
             // Application/JSON approach
             // Using AWS API Gateway as a remote source. Using mock integrations there
             // to return a 200 whenever this API is called.
-            document.getElementById('ajaxLogin').addEventListener('click', function() {
+            document.getElementById('ajaxLogin').addEventListener('click', function () {
                 var email = document.getElementById('crEmail').value;
                 var password = document.getElementById('crPassword').value;
                 fetch('https://jfha5on7o2.execute-api.us-east-1.amazonaws.com/live/login', {
                     cache: 'no-cache',
                     headers: {
-                      'content-type': 'application/json'
+                        'content-type': 'application/json'
                     },
                     method: 'POST',
                     mode: 'cors',
@@ -788,9 +855,9 @@
                         password: password
                     })
                 })
-									.then(function () {
-										window.location = "LastPassResult.html?crEmail=" + encodeURIComponent(email) + "&crPassword=" + encodeURIComponent(password);
-									});
+                    .then(function () {
+                        window.location = "LastPassResult.html?crEmail=" + encodeURIComponent(email) + "&crPassword=" + encodeURIComponent(password);
+                    });
             });
         };
         /*
@@ -858,63 +925,6 @@
             return result;
         }
     </script>
-
-    <style>
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #333333;
-            width: 1000px;
-        }
-
-        li {
-            float: left;
-        }
-
-        li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 16px;
-            text-decoration: none;
-        }
-
-        li a:hover {
-            background-color: #111111;
-        }
-
-        fieldset {
-            width: 350px;
-        }
-
-        table {
-            width: 350px;
-            align-content: left;
-        }
-
-        input {
-            line-height: 2;
-        }
-
-        .container {
-            width: 500px;
-            clear: both;
-        }
-
-        .container input {
-            width: 100%;
-            clear: both;
-        }
-
-        .no-spin::-webkit-inner-spin-button,
-        .no-spin::-webkit-outer-spin-button {
-            -webkit-appearance: none !important;
-            margin: 0 !important;
-            -moz-appearance: textfield !important;
-        }
-    </style>
 
 </body>
 
