@@ -8,7 +8,7 @@
 	<div class="container">
 
 		<p>
-			<form id="AddressForm">
+			<fieldset id="AdressesFieldSet">
 				<legend>Addresses:</legend>
 				<table>
 					<tr>
@@ -26,6 +26,10 @@
 					<tr>
 						<td><label for="addrLastName">Last Name:</label></td>
 						<td><input type="text" id="addrLastName" name="addrLastName" autocomplete="off" /></td>
+					</tr>
+					<tr>
+						<td><label for="addrUserName">Username:</label></td>
+						<td><input type="text" id="addrUserName" name="addrUserName" autocomplete="off" /></td>
 					</tr>
 					<tr>
 						<td><label for="addrGender">Gender:</label></td>
@@ -92,9 +96,11 @@
 						<td><input type="text" id="addrFax" name="addrFax" autocomplete="off" /></td>
 					</tr>
 				</table>
-				<button name="submitaddresses" onClick="submit('AddressForm')">Submit</button>
-			</form>
+				<button name="submitaddresses" onClick="submit('AdressesFieldSet')">Submit</button>
+			</fieldset>
 		</p>
+
+		<!-- <button name="submitall" onClick="submitall()">Submit All</button > -->
 
 		<button name="populateall" onClick="populateall()">Populate All</button>
 
@@ -108,6 +114,19 @@
 				window.location.href = window.location.pathname;
 			}
 		};
+		/*
+		function submitall(){
+			var formFields = document.getElementsByTagName('input');
+			var outSearchString = "?";
+			for (var i = 0; i < formFields.length; i++) {
+				if(formFields[i].value != '' && formFields[i].id != ''){
+					outSearchString = outSearchString + formFields[i].id + "=" + formFields[i].value + '&';
+				}
+			}
+			window.location = "LastPassResult.html" + outSearchString;
+			return false;
+		}
+		*/
 		function populateall() {
 			var formFields = document.getElementsByTagName('input');
 			for (var i = 0; i < formFields.length; i++) {
@@ -128,17 +147,17 @@
 			return false;
 		}
 
-		function submit(form) {
-			var forms = document.getElementsByTagName('form');
-			var form;
-			for (var i = 0; i < forms.length; i++) {
-				if (forms[i].id == form) {
-					form = forms[i];
+		function submit(fieldSet) {
+			var fieldSets = document.getElementsByTagName('fieldset');
+			var fieldSet;
+			for (var i = 0; i < fieldSets.length; i++) {
+				if (fieldSets[i].id == fieldSet) {
+					fieldSet = fieldSets[i];
 					break;
 				}
 			}
-			if (form) {
-				var formFields = form.getElementsByTagName('input');
+			if (fieldSet) {
+				var formFields = fieldSet.getElementsByTagName('input');
 				var outSearchString = "?";
 				for (var i = 0; i < formFields.length; i++) {
 					if (formFields[i].value != '' && formFields[i].id != '') {
@@ -162,7 +181,7 @@
 	</script>
 
 	<style>
-		form {
+		fieldset {
 			width: 350px;
 		}
 
