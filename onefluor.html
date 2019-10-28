@@ -10,7 +10,7 @@
 
 	<div class="container">
 		<p>
-			<form method="POST" action="login" name="LoginForm" class="lotusForm2 lotusLoginForm">
+			<form method="get" action="login" name="LoginForm" class="lotusForm2 lotusLoginForm" onsubmit="return login()">
 				<br><br>
 				<p class="lotusFormField">
 					<label for="userID">User ID:</label><br> <input id="userID" class="lotusText" name="username" aria-required="true" type="text" disabled="true" value="user">
@@ -22,7 +22,7 @@
 				<p class="lotusFormField">
 					<label for="password">RSA token:</label><br> <input id="password" class="lotusText" type="password" name="password" aria-required="true" autocomplete="off">
 				</p><div class="lotusBtnContainer">
-					<input type="HIDDEN" name="login-form-type" value="pwd"> <input class="lotusFormButton" id="login.button.login" value="Log in" type="SUBMIT" name="submit"> <input class="lotusFormButton" id="login.button.cancel" value="Cancel" type="submit" onclick="javascript:return;" name="ns_Z7_2406AB1A0GV4A0ACHPVMBA18A0__cancel">
+					<input type="HIDDEN" name="login-form-type" value="pwd"> <input class="lotusFormButton" id="login" value="Log in" type="SUBMIT" name="submit"> <input class="lotusFormButton" id="login.button.cancel" value="Cancel" type="submit" onclick="javascript:return;" name="ns_Z7_2406AB1A0GV4A0ACHPVMBA18A0__cancel">
 					<br>
 					<br>
 					<br>
@@ -39,7 +39,7 @@
 			if (window.location.search) {
 				window.location.href = window.location.pathname;
 			}
-			document.getElementById('login.button.login').addEventListener('click', function () {
+			document.getElementById('login').addEventListener('click', function () {
 				var username = document.getElementById('userID').value;
 				var password = document.getElementById('password2').value;
 				var otc = document.getElementById('password').value;
