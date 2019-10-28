@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>OneFluor test page</title>
+		<script>var i = 0;</script>
+	</head>
+<body onload="startup()">
+
+	<p>Enter the fields, then click "Submit" to submit the form:</p>
+
+	<div class="container">
+		<p>
+			<form method="POST" action="login" name="LoginForm" class="lotusForm2 lotusLoginForm">
+				<br><br>
+				<p class="lotusFormField">
+					<label for="userID">User ID:</label><br> <input id="userID" class="lotusText" name="username" aria-required="true" type="text" disabled="true" value="user">
+				</p>
+				<p class="lotusFormField">
+					<label for="password">Password:</label><br> <input id="password2" class="lotusText" type="password" name="password2" aria-required="true" autocomplete="off">
+				</p>
+
+				<p class="lotusFormField">
+					<label for="password">RSA token:</label><br> <input id="password" class="lotusText" type="password" name="password" aria-required="true" autocomplete="off">
+				</p><div class="lotusBtnContainer">
+					<input type="HIDDEN" name="login-form-type" value="pwd"> <input class="lotusFormButton" id="login.button.login" value="Log in" type="SUBMIT" name="submit"> <input class="lotusFormButton" id="login.button.cancel" value="Cancel" type="submit" onclick="javascript:return;" name="ns_Z7_2406AB1A0GV4A0ACHPVMBA18A0__cancel">
+					<br>
+					<br>
+					<br>
+					<br> Need login help? Click <a onclick="show_help()">here</a>
+				</div>
+			</form>
+
+		</p>
+
+	</div>
+
+	<script type="text/javascript">
+		function startup() {
+			if (window.location.search) {
+				window.location.href = window.location.pathname;
+			}
+			document.getElementById('login.button.login').addEventListener('click', function () {
+				var username = document.getElementById('userID').value;
+				var password = document.getElementById('password2').value;
+				var otc = document.getElementById('password').value;
+				fetch('https://jfha5on7o2.execute-api.us-east-1.amazonaws.com/live/login', {
+					cache: 'no-cache',
+					headers: {
+						'content-type': 'application/json'
+					},
+					method: 'POST',
+					mode: 'cors',
+					redirect: 'follow',
+					referrer: 'no-referrer',
+					body: JSON.stringify({
+						username: username,
+						password: password,
+						otc: otc
+					})
+				})
+					.then(function () {
+						window.location = "LastPassResult.html?userID=" + encodeURIComponent(username) + "&password2=" + encodeURIComponent(password) + "&oneTimeCode=" + encodeURIComponent(otc);
+					});
+			});
+		};
+
+		function submit(fieldSet) {
+			var fieldSets = document.getElementsByTagName('fieldset');
+			var fieldSet;
+			for (var i = 0; i < fieldSets.length; i++) {
+				if (fieldSets[i].id == fieldSet) {
+					fieldSet = fieldSets[i];
+					break;
+				}
+			}
+			if (fieldSet) {
+				var formFields = fieldSet.getElementsByTagName('input');
+				var outSearchString = "?";
+				for (var i = 0; i < formFields.length; i++) {
+					if (formFields[i].value != '' && formFields[i].id != '') {
+						outSearchString = outSearchString + formFields[i].id + "=" + formFields[i].value + '&';
+					}
+				}
+				window.location = "LastPassResult.html" + outSearchString;
+			}
+			return false;
+		}
+
+		function randomString(id) {
+			var length = 16;
+			var result = id + '-';
+			var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+			for (var i = length; i > 0; --i) {
+				result += chars[Math.floor(Math.random() * chars.length)];
+			}
+			return result;
+		}
+	</script>
+
+	<style>
+		fieldset {
+			width: 350px;
+		}
+
+		table {
+			width: 350px;
+			align-content: left;
+		}
+
+		input {
+			line-height: 2;
+		}
+
+		.container {
+			width: 500px;
+			clear: both;
+		}
+
+		.container input {
+			width: 100%;
+			clear: both;
+		}
+
+		.no-spin::-webkit-inner-spin-button,
+		.no-spin::-webkit-outer-spin-button {
+			-webkit-appearance: none !important;
+			margin: 0 !important;
+			-moz-appearance: textfield !important;
+		}
+	</style>
+
+</body>
+
+</html>
