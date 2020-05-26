@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+  <body onload="startup()">
+    <p>Enter the fields, then click "Submit" to submit the form:</p>
+
+    <div class="container">
+      <div class="addresses">
+        <div class="shipping-address">
+          <form id="AddressForm">
+            <fieldset>
+              <legend>Shipping Address:</legend>
+              <table>
+                <tr>
+                  <td><label for="addrTitle">Title:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrTitle"
+                      name="addrTitle"
+                      autocomplete="shippping honorific-prefix"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrFirstName">First Name:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrFirstName"
+                      name="addrFirstName"
+                      autocomplete="shippping given-name"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrMiddleName">Middle Name:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrMiddleName"
+                      name="addrMiddleName"
+                      autocomplete="shippping additional-name"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrLastName">Last Name:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrLastName"
+                      name="addrLastName"
+                      autocomplete="shippping family-name"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrGender">Gender:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrGender"
+                      name="addrGender"
+                      autocomplete="shippping sex"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrCompany">Company:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrCompany"
+                      name="addrCompany"
+                      autocomplete="shippping organization"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrSddress1">Address 1:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrSddress1"
+                      name="addrSddress1"
+                      autocomplete="shippping address-line1"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrAddress2">Address 2:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrAddress2"
+                      name="addrAddress2"
+                      autocomplete="shippping address-line2"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrAddress3">Address 3:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrAddress3"
+                      name="addrAddress3"
+                      autocomplete="shippping address-line3"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrCitySlashTown">City / Town:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrCitySlashTown"
+                      name="addrCitySlashTown"
+                      autocomplete="shippping address-level1"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrtcounty">County:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrtcounty"
+                      name="addrtcounty"
+                      autocomplete="shippping address-level2"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrState">State:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrState"
+                      name="addrState"
+                      autocomplete="shippping address-level3"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label for="addrZipSlashPostalCode"
+                      >ZIP / Postal Code:</label
+                    >
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrZipSlashPostalCode"
+                      name="addrZipSlashPostalCode"
+                      autocomplete="shippping address-level4"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrCountry">Country:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrCountry"
+                      name="addrCountry"
+                      autocomplete="shippping country"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrTimezone">Timezone:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrTimezone"
+                      name="addrTimezone"
+                      autocomplete="on"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrEmailAddress">Email Address:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrEmailAddress"
+                      name="addrEmailAddress"
+                      autocomplete="shippping email"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrPhoneNumber">Phone:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrPhoneNumber"
+                      name="addrPhoneNumber"
+                      autocomplete="shippping work tel"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrEveningPhone">Evening Phone:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrEveningPhone"
+                      name="addrEveningPhone"
+                      autocomplete="shippping home tel"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrMobilePhone">Mobile Phone:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrMobilePhone"
+                      name="addrMobilePhone"
+                      autocomplete="shippping mobile tel"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrFax">Fax:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrFax"
+                      name="addrFax"
+                      autocomplete="shippping fax tel"
+                    />
+                  </td>
+                </tr>
+              </table>
+            </fieldset>
+            <button name="submitaddresses" onClick="submit('AddressForm')">
+              Submit
+            </button>
+          </form>
+        </div>
+
+        <div class="billing-address">
+          <form id="AddressForm">
+            <fieldset>
+              <legend>Billing Address:</legend>
+              <table>
+                <tr>
+                  <td><label for="addrTitle">Title:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrTitle"
+                      name="addrTitle"
+                      autocomplete="billing honorific-prefix"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrFirstName">First Name:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrFirstName"
+                      name="addrFirstName"
+                      autocomplete="billing given-name"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrMiddleName">Middle Name:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrMiddleName"
+                      name="addrMiddleName"
+                      autocomplete="billing additional-name"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrLastName">Last Name:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrLastName"
+                      name="addrLastName"
+                      autocomplete="billing family-name"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrGender">Gender:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrGender"
+                      name="addrGender"
+                      autocomplete="billing sex"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrCompany">Company:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrCompany"
+                      name="addrCompany"
+                      autocomplete="billing organization"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrSddress1">Address 1:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrSddress1"
+                      name="addrSddress1"
+                      autocomplete="billing address-line1"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrAddress2">Address 2:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrAddress2"
+                      name="addrAddress2"
+                      autocomplete="billing address-line2"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrAddress3">Address 3:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrAddress3"
+                      name="addrAddress3"
+                      autocomplete="billing address-line3"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrCitySlashTown">City / Town:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrCitySlashTown"
+                      name="addrCitySlashTown"
+                      autocomplete="billing address-level1"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrtcounty">County:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrtcounty"
+                      name="addrtcounty"
+                      autocomplete="billing address-level2"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrState">State:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrState"
+                      name="addrState"
+                      autocomplete="billing address-level3"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label for="addrZipSlashPostalCode"
+                      >ZIP / Postal Code:</label
+                    >
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrZipSlashPostalCode"
+                      name="addrZipSlashPostalCode"
+                      autocomplete="billing address-level4"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrCountry">Country:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrCountry"
+                      name="addrCountry"
+                      autocomplete="billing country"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrTimezone">Timezone:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrTimezone"
+                      name="addrTimezone"
+                      autocomplete="on"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrEmailAddress">Email Address:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrEmailAddress"
+                      name="addrEmailAddress"
+                      autocomplete="billing email"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrPhoneNumber">Phone:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrPhoneNumber"
+                      name="addrPhoneNumber"
+                      autocomplete="billing work tel"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrEveningPhone">Evening Phone:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrEveningPhone"
+                      name="addrEveningPhone"
+                      autocomplete="billing home tel"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrMobilePhone">Mobile Phone:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrMobilePhone"
+                      name="addrMobilePhone"
+                      autocomplete="billing mobile tel"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="addrFax">Fax:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      id="addrFax"
+                      name="addrFax"
+                      autocomplete="billing fax tel"
+                    />
+                  </td>
+                </tr>
+              </table>
+            </fieldset>
+            <button name="submitaddresses" onClick="submit('AddressForm')">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <button name="populateall" onClick="populateall()">Populate All</button>
+
+      <button name="clearall" onClick="clearall()">Clear All</button>
+    </div>
+
+    <script type="text/javascript">
+      function startup() {
+        if (window.location.search) {
+          window.location.href = window.location.pathname;
+        }
+      }
+      function populateall() {
+        var formFields = document.getElementsByTagName('input');
+        for (var i = 0; i < formFields.length; i++) {
+          var type = formFields[i].type;
+          console.log(type);
+          if ((type = 'text')) {
+            formFields[i].value = randomString(formFields[i].id);
+          }
+        }
+        return false;
+      }
+
+      function clearall() {
+        var formFields = document.getElementsByTagName('input');
+        for (var i = 0; i < formFields.length; i++) {
+          formFields[i].value = '';
+        }
+        return false;
+      }
+
+      function submit(form) {
+        var forms = document.getElementsByTagName('form');
+        var form;
+        for (var i = 0; i < forms.length; i++) {
+          if (forms[i].id == form) {
+            form = forms[i];
+            break;
+          }
+        }
+        if (form) {
+          var formFields = form.getElementsByTagName('input');
+          var outSearchString = '?';
+          for (var i = 0; i < formFields.length; i++) {
+            if (formFields[i].value != '' && formFields[i].id != '') {
+              outSearchString =
+                outSearchString +
+                formFields[i].id +
+                '=' +
+                formFields[i].value +
+                '&';
+            }
+          }
+          window.location = 'LastPassResult.html' + outSearchString;
+        }
+        return false;
+      }
+
+      function randomString(id) {
+        var length = 16;
+        var result = id + '-';
+        var chars =
+          '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        for (var i = length; i > 0; --i) {
+          result += chars[Math.floor(Math.random() * chars.length)];
+        }
+        return result;
+      }
+    </script>
+
+    <style>
+      form {
+        width: 350px;
+      }
+
+      table {
+        width: 350px;
+        align-content: left;
+      }
+
+      input {
+        line-height: 2;
+      }
+
+      .container {
+        width: 100%;
+        clear: both;
+      }
+
+      .container input {
+        width: 100%;
+        clear: both;
+      }
+
+      .addresses {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .no-spin::-webkit-inner-spin-button,
+      .no-spin::-webkit-outer-spin-button {
+        -webkit-appearance: none !important;
+        margin: 0 !important;
+        -moz-appearance: textfield !important;
+      }
+    </style>
+  </body>
+</html>
